@@ -31,6 +31,9 @@ def different_tuple(a: tuple, b: tuple) -> tuple:
     for item in a:
         if item not in b:
             diff.append(item)
+    for item in b:
+        if item not in a and item not in diff:
+            diff.append(item)
     com = tuple(diff)
     return com
 
